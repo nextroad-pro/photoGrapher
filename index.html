@@ -5,52 +5,80 @@ er/index.html
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>摄影师作品集</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header class="header">
         <nav class="nav">
-            <div class="logo">PhotoGrapher</div>
+            <div class="logo">PHOTOGRAPHER</div>
             <ul class="nav-links">
                 <li><a href="#home">首页</a></li>
                 <li><a href="#portfolio">作品集</a></li>
                 <li><a href="#about">关于我</a></li>
-                <li><a href="#contact">联系方式</a></li>
+                <li><a href="#contact">联系</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="home" class="hero">
-            <h1>捕捉精彩瞬间</h1>
-            <p>专业摄影服务，为您留存美好回忆</p>
-        </section>
-
-        <section id="portfolio" class="portfolio">
-            <h2>作品展示</h2>
-            <div class="gallery">
-                <!-- 这里后续可以添加图片 -->
+            <div class="hero-background">
+                <!-- 这里会通过 JavaScript 添加滚动背景 -->
+            </div>
+            <div class="profile-section">
+                <img src="https://source.unsplash.com/random/200x200/?portrait" alt="摄影师头像" class="profile-image">
+                <div class="hero-text">
+                    <h1>视界 · 瞬间</h1>
+                    <p>通过镜头捕捉光影，用画面诉说故事</p>
+                </div>
             </div>
         </section>
 
-        <section id="about" class="about">
-            <h2>关于我</h2>
-            <p>专业摄影师，专注于人像与风景摄影</p>
+        <section id="portfolio" class="portfolio-section">
+            <h2 class="section-title">作品集</h2>
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <img src="https://source.unsplash.com/random/800x600/?nature" alt="自然风光">
+                </div>
+                <div class="portfolio-content">
+                    <h3>自然风光</h3>
+                    <p>在广袤的自然中，每一帧都是独特的艺术品。通过镜头，我试图捕捉大自然最动人的瞬间，展现它的壮美与细腻。</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <img src="https://source.unsplash.com/random/800x600/?portrait" alt="人像摄影">
+                </div>
+                <div class="portfolio-content">
+                    <h3>人像摄影</h3>
+                    <p>每个人都有属于自己的故事，我的使命就是通过摄影将这些独特的故事永恒定格。</p>
+                </div>
+            </div>
         </section>
 
         <section id="contact" class="contact">
-            <h2>联系我</h2>
+            <h2 class="section-title">联系我</h2>
             <form>
-                <input type="text" placeholder="您的姓名">
-                <input type="email" placeholder="您的邮箱">
-                <textarea placeholder="留言内容"></textarea>
-                <button type="submit">发送消息</button>
+                <div class="form-group">
+                    <input type="text" placeholder="您的姓名" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="您的邮箱" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="请留下您的信息" rows="5" required></textarea>
+                </div>
+                <button type="submit">发送信息</button>
             </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 PhotoGrapher. All rights reserved.</p>
+        <p>&copy; 2025 摄影师作品集 版权所有</p>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>

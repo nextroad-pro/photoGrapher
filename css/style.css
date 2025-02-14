@@ -1,35 +1,46 @@
+:root {
+    --gold: #D4AF37;
+    --black: #1A1A1A;
+    --white: #FFFFFF;
+    --gray: #333333;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    background-color: var(--black);
+    color: var(--white);
     line-height: 1.6;
 }
 
 .header {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(26, 26, 26, 0.95);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-bottom: 1px solid var(--gold);
 }
 
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
-    max-width: 1200px;
+    padding: 1.5rem 5%;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--gold);
+    letter-spacing: 2px;
 }
 
 .nav-links {
@@ -38,17 +49,19 @@ body {
 }
 
 .nav-links li {
-    margin-left: 2rem;
+    margin-left: 3rem;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
+    color: var(--white);
     transition: color 0.3s;
+    font-weight: 300;
+    letter-spacing: 1px;
 }
 
 .nav-links a:hover {
-    color: #666;
+    color: var(--gold);
 }
 
 section {
@@ -59,57 +72,171 @@ section {
 
 .hero {
     height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.profile-section {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
+    position: relative;
+    z-index: 2;
+    background: rgba(26, 26, 26, 0.6);
 }
 
-.hero h1 {
-    font-size: 3rem;
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid var(--gold);
+    margin-bottom: 2rem;
+    object-fit: cover;
+}
+
+.hero-text {
+    text-align: center;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
     margin-bottom: 1rem;
+    color: var(--gold);
 }
 
-.portfolio {
+.hero-text p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.portfolio-section {
+    padding: 6rem 5%;
+}
+
+.section-title {
     text-align: center;
+    color: var(--gold);
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 4rem;
+    letter-spacing: 2px;
+}
+
+.portfolio-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8rem;
+    gap: 4rem;
+}
+
+.portfolio-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.portfolio-image {
+    flex: 1;
+    max-width: 50%;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.portfolio-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+.portfolio-content h3 {
+    color: var(--gold);
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.contact {
+    padding: 6rem 5%;
+    background: var(--gray);
 }
 
 .contact form {
-    display: flex;
-    flex-direction: column;
     max-width: 600px;
     margin: 0 auto;
 }
 
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
 input, textarea {
-    margin: 0.5rem 0;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--white);
     border-radius: 4px;
+    font-size: 1rem;
 }
 
 button {
-    padding: 1rem 2rem;
-    background: #333;
-    color: white;
+    width: 100%;
+    padding: 1rem;
+    background: var(--gold);
+    color: var(--black);
     border: none;
     border-radius: 4px;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s;
 }
 
 button:hover {
-    background: #555;
+    background: var(--white);
 }
 
 footer {
-    text-align: center;
     padding: 2rem;
-    background: #333;
-    color: white;
+    text-align: center;
+    background: var(--black);
+    color: var(--gold);
+}
+
+@media (max-width: 768px) {
+    .nav {
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .portfolio-item {
+        flex-direction: column !important;
+        gap: 2rem;
+    }
+    
+    .portfolio-image {
+        max-width: 100%;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
 }
